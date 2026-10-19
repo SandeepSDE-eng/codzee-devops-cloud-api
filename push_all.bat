@@ -1,33 +1,12 @@
-﻿@echo off
-title Pushing All Branches to GitHub...
+@echo off
+title Updating GitHub...
 cd /d C:\SandeYadav\codzee-devops-cloud-api
 
-echo ========================================================
-echo  Step 1: Pushing main branch (force update with full docs)...
-echo ========================================================
-git push -u origin main --force
+echo Pushing updated README to main branch...
+git push origin main
 
 echo.
 echo ========================================================
-echo  Step 2: Pushing PR #1: feat/jwt-auth-validation...
+echo Done! Please refresh your GitHub repository page.
 echo ========================================================
-git push -u origin feat/jwt-auth-validation
-
-echo.
-echo ========================================================
-echo  Step 3: Pushing PR #2: fix/security-and-error-handling...
-echo ========================================================
-git push -u origin fix/security-and-error-handling
-
-echo.
-echo ========================================================
-echo  Step 4: Pushing PR #3: ci-devops/docker-and-github-actions...
-echo ========================================================
-git push -u origin ci-devops/docker-and-github-actions
-
-echo.
-echo ========================================================
-echo  SUCCESS! All 4 branches pushed to GitHub!
-echo ========================================================
-echo Now open GitHub and Codzee.io to connect and open PRs.
 pause
