@@ -2,6 +2,7 @@
 import cors from "cors";
 import healthRoutes from "./routes/healthRoutes";
 import taskRoutes from "./routes/taskRoutes";
+import authRoutes from "./routes/authRoutes";
 import { config } from "./config/environment";
 
 const app: Application = express();
@@ -13,7 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 // Observability and Health Probes
 app.use("/health", healthRoutes);
 
-// Core API Routes
+// Auth & Tasks API Routes
+app.use(`${config.apiPrefix}/auth`, authRoutes);
 app.use(`${config.apiPrefix}/tasks`, taskRoutes);
 
 // 404 Fallback Handler
